@@ -2508,7 +2508,7 @@ input, select, textarea {
 			display: block;
 			background: #ffffff;
 			border-radius: 100%;
-			color: #312450;
+			color:#000 !important;
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2517,14 +2517,6 @@ input, select, textarea {
 			.icon.major:before {
 				font-size: 1.25em;
 			}
-
-				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
-				}
-
-				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
-				}
 
 /* Image */
 
@@ -2989,7 +2981,6 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
@@ -3210,28 +3201,8 @@ input, select, textarea {
 			background-color: #261c3e;
 		}
 
-		.wrapper.style1 {
-			background-color: #5e42a6;
-		}
-
-		.wrapper.style1-alt {
-			background-color: #493382;
-		}
-
-		.wrapper.style2 {
-			background-color: #5052b5;
-		}
-
-		.wrapper.style2-alt {
-			background-color: #3e4094;
-		}
-
 		.wrapper.style3 {
-			background-color: #b74e91;
-		}
-
-		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color:  #00fc5474;
 		}
 
 		.wrapper.fullscreen {
@@ -3882,6 +3853,9 @@ input, select, textarea {
 		}
 
 .psn {
-	color: #000;
+	color: rgba(255, 255, 255, 0.823);
 }
 
+.contato {
+	background:  #00fc545b !important;
+}
