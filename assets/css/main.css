@@ -3022,15 +3022,15 @@ input, select, textarea {
 			}
 
 		.spotlights > section:nth-child(1) {
-			background-color: #00fc54a3;
+			background-color: #35c796;
 		}
 	
 		.spotlights > section:nth-child(2) {
-			background-color:  #00fc5495;
+			background-color:  #32be8fe5;
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: #00fc5488;
+			background-color: #32be8fd0;
 		}
 
 		.spotlights > section.inactive > .image:before,
@@ -3202,7 +3202,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color:  #00fc5474;
+			background-color:  #32be8fc2;
 		}
 
 		.wrapper.fullscreen {
@@ -3708,10 +3708,10 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #067503, #00FF57);
-				background-image: -webkit-linear-gradient(to right, #067503, #00FF57);
-				background-image: -ms-linear-gradient(to right, #067503, #00FF57);
-				background-image: linear-gradient(to right, #067503, #00FF57);
+				background-image: -moz-linear-gradient(to right,#32be8fd0, #00FF57);
+				background-image: -webkit-linear-gradient(to right, #32be8fd0, #00FF57);
+				background-image: -ms-linear-gradient(to right, #32be8fd0, #00FF57);
+				background-image: linear-gradient(to right, #32be8fd0, #00FF57);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3817,7 +3817,7 @@ input, select, textarea {
 
 	#intro {
 		background-attachment: fixed;
-		background-image: url("../../images/Cópia\ de\ Yellow\ and\ Purple\ Modern\ Gamer\ MMO\ _\ Role\ Playing\ YouTube\ Intro.jpg");
+		background-image: url("../../images/Yellow\ and\ Purple\ Modern\ Gamer\ MMO\ _\ Role\ Playing\ YouTube\ Intro.png");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -3857,5 +3857,5 @@ input, select, textarea {
 }
 
 .contato {
-	background:  #00fc545b !important;
+	background:  #32be8faf !important;
 }
