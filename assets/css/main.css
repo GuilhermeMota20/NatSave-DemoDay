@@ -189,12 +189,9 @@ input, select, textarea {
 			position: relative;
 			padding-bottom: 0.35em;
 		}
-
+/* #32be8fd0 */
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-color: #0a0613;
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3849,6 +3846,14 @@ input, select, textarea {
 	color: rgba(255, 255, 255, 0.823);
 }
 
+.psn-black {
+	color: #0a0613;;
+}
+
 .contato {
 	background:  #32be8faf !important;
+}
+
+#oq-fazemos {
+	background: #32be8fd0;
 }
