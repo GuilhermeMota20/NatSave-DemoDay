@@ -3858,3 +3858,50 @@ input, select, textarea {
 	background:  #32be8f;
 }
 
+/* card game - missões */
+
+
+.game-menu {
+	padding-top: 40px;
+	display: flex;
+	justify-content: space-around;
+	margin-left: 10px;
+}
+
+.card-game {
+	width: 300px;
+	height: 380px;
+	background-color: #32be8f !important;
+	border-radius: 1.25em;
+	margin: 20px;
+	align-items: center;
+	padding: 2%;
+	box-sizing: content-box;
+}
+
+.game-image {
+	width: 90px;
+}
+
+.game-align {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-bottom: 2%;
+}
+
+.game-btn {
+	width: 100px !important;
+}
+
+#natividade {
+	color: #32be8f;
+}
+
+#natividade.major:after {
+	background-color: #32be8f;
+}
+
+#game {
+	background: #0a0613;
+}
