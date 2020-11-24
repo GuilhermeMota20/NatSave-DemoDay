@@ -7,5 +7,5 @@ atual=atual+pontos;
 alert(`Parabéns!! agora você possui ${atual} pontos`);
 bot.removeEventListener('click', Clicar);
     bot.style.background ='#fff';
-    bot.innerHTML='Concluída !';  
+    bot.innerHTML='Finalizada!';  
 }

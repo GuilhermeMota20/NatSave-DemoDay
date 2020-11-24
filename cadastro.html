@@ -27,15 +27,15 @@
             </div>
             <div class="login-container">
                 <form action="">
-                    <img src="images/avatar_form.svg" class="avatar" alt="Avatar" />
+                    <img src="images/empresa.svg" class="avatar" alt="Avatar" />
                     <h2>Vamos começar?!</h2>
                     <div class="input-div one">
                         <div class="i">
                             <i class="fa fa-user fa-2x"></i>
                         </div>
                         <div>
-                            <h5>Empresa que atua</h5>
-                            <input type="text" class="input" required>
+                            <h5>Nome da empresa</h5>
+                            <input type="text" name="nomeempresa" class="input" maxlength="50" required>
                         </div>
                     </div>
 
@@ -44,8 +44,18 @@
                             <i class="fa fa-user fa-2x"></i>
                         </div>
                         <div>
-                            <h5>Nome de usuário</h5>
-                            <input type="text" class="input" maxlength="" required>
+                            <h5>Número de funcionários</h5>
+                            <input type="text" name="numfuncionario" class="input" maxlength="4" required>
+                        </div>
+                    </div>
+
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fa fa-user fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5>CNPJ</h5>
+                            <input type="text" name="cnpj" class="input" maxlength="14" required>
                         </div>
                     </div>
 
@@ -55,7 +65,7 @@
                         </div>
                         <div>
                             <h5>E-mail</h5>
-                            <input type="email" class="input" required>
+                            <input type="email" name="email" class="input" required>
                         </div>
                     </div>
 
@@ -64,8 +74,8 @@
                             <i class="fa fa-lock fa-2x"></i>
                         </div>
                         <div>
-                            <h5>Senha</h5>
-                            <input type="password" class="input" maxlength="" required>
+                            <h5>Telefone</h5>
+                            <input type="tel" name="tel" class="input" maxlength="11" required>
                         </div>
                     </div><br><br>
 
