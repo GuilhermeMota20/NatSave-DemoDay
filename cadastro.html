@@ -26,7 +26,7 @@
                 <img src="images/mobileregister.svg" alt="Background">
             </div>
             <div class="login-container">
-                <form action="">
+                <form method="POST" action="cadastro_empresa.php">
                     <img src="images/empresa.svg" class="avatar" alt="Avatar" />
                     <h2>Vamos começar?!</h2>
                     <div class="input-div one">
@@ -45,7 +45,7 @@
                         </div>
                         <div>
                             <h5>Número de funcionários</h5>
-                            <input type="text" name="numfuncionario" class="input" maxlength="4" required>
+                            <input type="number" name="numfuncionario" class="input" required>
                         </div>
                     </div>
 
@@ -68,16 +68,7 @@
                             <input type="email" name="email" class="input" required>
                         </div>
                     </div>
-
-                    <div class="input-div two">
-                        <div class="i">
-                            <i class="fa fa-lock fa-2x"></i>
-                        </div>
-                        <div>
-                            <h5>Telefone</h5>
-                            <input type="tel" name="tel" class="input" maxlength="11" required>
-                        </div>
-                    </div><br><br>
+                    <br><br>
 
                     <input type="submit" class="btn" value="Cadastrar!">
 
