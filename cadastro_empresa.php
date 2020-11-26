@@ -13,6 +13,6 @@
 
     mysqli_close($conn);
 
-    echo ("<script> alert('Registro atualizado com sucesso!'); window.location.href='index.html'; </script>");
+    echo ("<script> alert('Registro atualizado com sucesso!'); window.location.href='cadastro-concluido.html'; </script>");
 
 ?>

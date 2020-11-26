@@ -3854,12 +3854,17 @@ input, select, textarea {
 	color: #0a0613;;
 }
 
+.psn-green {
+	color: #32be8f;
+}
+
 .contato {
 	background:  #32be8faf !important;
 }
 
 #oq-fazemos {
-	background:  #32be8f;
+	background: #0a0613;
+	;
 }
 
 /* card game - missões */
