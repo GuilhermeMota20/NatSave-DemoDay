@@ -3846,6 +3846,10 @@ input, select, textarea {
 	color: rgba(255, 255, 255, 0.823);
 }
 
+.psn-bold {
+	color: #fff;
+}
+
 .psn-black {
 	color: #0a0613;;
 }
@@ -3906,3 +3910,22 @@ input, select, textarea {
 #game {
 	background: #0a0613;
 }
+
+
+/* ranking */
+.card-rank {
+	width: 70%;
+	height: 30px;
+	background-color: #32be8f !important;
+	border-radius: 1.25em;
+	margin: 5px;
+	align-items: center;
+	padding: 2%;
+	box-sizing: content-box;
+}
+
+.rank-align {
+	display: flex;
+	justify-content: space-around;
+}
+
