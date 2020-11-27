@@ -53,17 +53,37 @@
 		</section>
 
 		<section id="main" class="wrapper game-menu row gtr-uniform">
+
+			<?php
+
+			$sql="SELECT * FROM tbl_usuario ORDER BY pontuacao DESC";
+
+			//conexão como o bd
+			include('conexao.php');
+
+			//executar comando $sql
+			$resultado=mysqli_query($conn, $sql);
+			while ($registro=mysqli_fetch_array($resultado))
+				{
+			?>
+
 			<section id="game" class="card-rank">
 				<div class="rank-align">
 					<h3>#1</h3>
 
-					<p class="psn-bold">Anna Salomão</p>
-					<p class="psn-black">Pontos: 270</p>
+					<p class="psn-bold"> <?php echo($registro['nome_usuario']);?> </p>
+
+					<p class="psn-black"> <?php echo($registro['pontuacao']);?> </p>
 				</div>
 
 			</section>
 
-			<section id="game" class="card-rank">
+			<?php
+                    }
+                    mysqli_close($conn);
+                ?>
+
+			<!--  <section id="game" class="card-rank">
 				<div class="rank-align">
 					<h3>#2</h3>
 				
@@ -99,7 +119,7 @@
 					<p class="psn-bold">Laura</p>
 					<p class="psn-black">Pontos: 20</p>
 				</div>
-			</section>
+			</section>-->
 
 		</section>
 
