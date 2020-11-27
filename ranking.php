@@ -25,7 +25,7 @@
 		<nav>
 			<ul>
 				<li><a href="game.html">Na'tividade</a></li>
-				<li><a href="ranking.html" class="active">Rankings</a></li>
+				<li><a href="ranking.php" class="active">Rankings</a></li>
 				<li><a href="elements.html">Premios</a></li>
 			</ul>
 		</nav>
@@ -57,6 +57,7 @@
 			<?php
 
 			$sql="SELECT * FROM tbl_usuario ORDER BY pontuacao DESC";
+			$rank='SELECT * FROM tbl_ranking ORDER BY nome_posicao ASC';
 
 			//conexão como o bd
 			include('conexao.php');
