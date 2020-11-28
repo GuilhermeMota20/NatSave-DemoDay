@@ -6,10 +6,9 @@
 	if (isset($_GET['Missao'])){
 		$id_missao= $_GET['Missao'];
 		$sql="INSERT INTO usuar_desafio (id_usuario, id_desafio) VALUES ($id_usuario, $id_missao)";
-		//conexão como o bd
+
 		include('conexao.php');
 
-		//executar comando $sql
 		mysqli_query($conn, $sql);
 		
 		mysqli_close($conn);
@@ -78,10 +77,9 @@
 			<?php
 
 			$sql="SELECT * FROM tbl_desafio ORDER BY id_desafio ASC";
-			//conexão como o bd
+
 			include('conexao.php');
 
-			//executar comando $sql
 			$resultado=mysqli_query($conn, $sql);
 			while ($registro=mysqli_fetch_array($resultado))
 				{
@@ -130,111 +128,6 @@
                     mysqli_close($conn);
                 ?>
 
-
-			<!--<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/troca.svg" alt="">
-					<h3>Missão 2</h3>
-				</div>
-
-				<p class="psn">Troque copos descartáveis por uma garrinha d'água mais resistente.</p>
-				<p class="psn">Pontos: 10 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/plantar.svg" alt="">
-					<h3>Missão 3</h3>
-				</div>
-
-				<p class="psn">Plante sementes em seu jardim ou em ambientes apropiados e que possam se prosperar.</p>
-				<p class="psn">Pontos: 30 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/fazendeira.svg" alt="">
-					<h3>Missão 4</h3>
-				</div>
-
-				<p class="psn">Se voluntarie a trabalhos em fazendas e os ajude na jardinagem e colheta.</p>
-				<p class="psn">Pontos: 50 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/jardinagem.svg" alt="">
-					<h3>Missão 5</h3>
-				</div>
-
-				<p class="psn">Leve flores a seu ambiente de trabalho e as cuide diariamente.</p>
-				<p class="psn">Pontos: 20 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/gato.svg" alt="">
-					<h3>Missão 6</h3>
-				</div>
-
-				<p class="psn">Adote ou leve um bichinho perdido na rua a um veterinário ou lar de adoção.</p>
-				<p class="psn">Pontos: 20 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/supermulher.svg" alt="">
-					<h3>Missão 7</h3>
-				</div>
-
-				<p class="psn">Promova eventos em prol da sustentabilidade junto de sua empresa.</p>
-				<p class="psn">Pontos: 50 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/compras.svg" alt="">
-					<h3>Missão 8</h3>
-				</div>
-
-				<p class="psn">Evite compras em produtos que possam interferir no desenvolvimento do meio ambiente.</p>
-				<p class="psn">Pontos: 40 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
-
-			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="images/campo.svg" alt="">
-					<h3>Missão 9</h3>
-				</div>
-
-				<p class="psn">Troque copos descartáveis por uma garrinha d'água mais resistente.</p>
-				<p class="psn">Pontos: 20 NatCoins</p>
-				<ul class="actions">
-					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
-				</ul>
-			</section>
- -->
 		</section>
 
 

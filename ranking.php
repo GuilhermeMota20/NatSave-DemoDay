@@ -39,7 +39,7 @@ $usuario=$_SESSION["usuario"];
 				<li><a href="elements.html">Premios</a></li>
 			</ul>
 		</nav>
-	</header><br><br>
+	</header><br><br><br><br>
 
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -69,10 +69,8 @@ $usuario=$_SESSION["usuario"];
 
 			$sql="SELECT u.nome_usuario, sum(ifnull(d.pontos, 0)) pontos FROM tbl_usuario u LEFT JOIN(tbl_desafio d CROSS JOIN usuar_desafio ud) ON u.id_usuario=ud.id_usuario and d.id_desafio=ud.id_desafio GROUP BY nome_usuario ORDER BY sum(ifnull(d.pontos, 0)) DESC";
 
-			//conexão como o bd
 			include('conexao.php');
 
-			//executar comando $sql
 			$resultado=mysqli_query($conn, $sql);
 			while ($registro=mysqli_fetch_array($resultado))
 				{
@@ -93,44 +91,6 @@ $usuario=$_SESSION["usuario"];
                     }
                     mysqli_close($conn);
                 ?>
-
-			<!--  <section id="game" class="card-rank">
-				<div class="rank-align">
-					<h3>#2</h3>
-				
-					<p class="psn-bold">Gabriela Cancello</p>
-					<p class="psn-black">Pontos: 180</p>
-				</div>
-			</section>
-
-			<section id="game" class="card-rank">
-				<div class="rank-align">
-					<h3>#3</h3>
-				
-
-					<p class="psn-bold">Gabrielly Jesus</p>
-					<p class="psn-black">Pontos: 90</p>
-				</div>
-			</section>
-
-			<section id="game" class="card-rank">
-				<div class="rank-align">
-					<h3>#4</h3>
-
-					<p class="psn-bold">Guilherme Mota</p>
-					<p class="psn-black">Pontos: 50</p>
-				</div>
-			</section>
-
-			<section id="game" class="card-rank">
-				<div class="rank-align">
-					<h3>#5</h3>
-				
-
-					<p class="psn-bold">Laura</p>
-					<p class="psn-black">Pontos: 20</p>
-				</div>
-			</section>-->
 
 		</section>
 
@@ -157,8 +117,6 @@ $usuario=$_SESSION["usuario"];
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-
-	<script src="assets/js/game.js"></script>
 </body>
 
 </html>
