@@ -1,9 +1,25 @@
+<?php
+	include("protecao.php");
+	protecao();	
+	$usuario=$_SESSION["usuario"];
+	$id_usuario=$_SESSION["id_usuario"];
+	if (isset($_GET['Missao'])){
+		$id_missao= $_GET['Missao'];
+		$sql="INSERT INTO usuar_desafio (id_usuario, id_desafio) VALUES ($id_usuario, $id_missao)";
+		//conexão como o bd
+		include('conexao.php');
+
+		//executar comando $sql
+		mysqli_query($conn, $sql);
+		
+		mysqli_close($conn);
+
+	} 
+	
+
+?>
+
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
@@ -24,9 +40,11 @@
 			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
 		<nav>
 			<ul>
-				<li><a href="game.html" class="active">Na'tividade</a></li>
+				<li><a href="game.php" class="active">Na'tividade</a></li>
 				<li><a href="ranking.php">Rankings</a></li>
 				<li><a href="elements.html">Premios</a></li>
+				<li><a href="logout.php">Sair</a></li>
+				<li> <?php echo $usuario?> </li>
 			</ul>
 		</nav>
 	</header><br><br>
@@ -54,20 +72,62 @@
 
 		<section id="main" class="wrapper game-menu row gtr-uniform">
 
+		<?php
+
+		$sql="SELECT * FROM tbl_desafio ORDER BY id_desafio ASC";
+		//conexão como o bd
+		include('conexao.php');
+
+		//executar comando $sql
+		$resultado=mysqli_query($conn, $sql);
+		while ($registro=mysqli_fetch_array($resultado))
+			{
+		?>
+
+		<form method="POST" action="login_usuario.php">
+
 			<section id="game" class="card-game">
 				<div class="game-align">
-					<img class="game-image" src="images/undraw_nature_m5ll.svg" alt="">
-					<h3>Missão 1</h3>
+					<img class="game-image" src="<?php echo($registro["figura"]);?>" alt="">
+					<h3>Missão <?php echo($registro["id_desafio"]);?></h3>
 				</div>
 
-				<p class="psn">Colete 50 tampinhas de garrafas pet e leve-as para reciclar.</p>
-				<p class="psn">Pontos: 50 NatCoins</p>
+				<p class="psn"><?php echo($registro["enun_desafio"]); ?></p>
+				<p class="psn">Pontos: <?php echo($registro["pontos"]); ?> NatCoins</p>
 				<ul class="actions">
-					<li><a id="btngame" href="#" class="button scrolly game-btn">Concluir</a></li>
+					<li>
+						<?php 
+							$id_desafio=$registro['id_desafio'];
+
+							$sql="SELECT id_desafio FROM usuar_desafio WHERE id_usuario=$id_usuario and id_desafio=$id_desafio"; 
+
+							$verificar_missao=mysqli_query($conn, $sql);
+							$missao_ok=mysqli_fetch_object($verificar_missao);
+						
+							if ($missao_ok== NULL){
+								?>
+								<a id="btngame" href="?Missao=<?php echo($registro["id_desafio"]);?>" class="button scrolly game-btn">Concluir</a>
+								<?php
+							}
+							else {
+								?>
+								<a id="btngame" class="button scrolly game-btn" disabled="disabled" style="color= #fff;">Finalizada!</a>
+								<?php
+							}
+
+						?>
+					</li>
 				</ul>
 			</section>
+		</form>
 
-			<section id="game" class="card-game">
+			<?php
+                    }
+                    mysqli_close($conn);
+                ?>
+
+
+<!-- 			<section id="game" class="card-game">
 				<div class="game-align">
 					<img class="game-image" src="images/troca.svg" alt="">
 					<h3>Missão 2</h3>
@@ -170,7 +230,7 @@
 					<li><a href="#" class="button scrolly game-btn">Concluir</a></li>
 				</ul>
 			</section>
-
+ -->
 		</section>
 
 	</div>
@@ -196,8 +256,6 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-
-	<script src="assets/js/game.js"></script>
 </body>
 
 </html>

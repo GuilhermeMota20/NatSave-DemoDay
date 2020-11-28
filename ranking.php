@@ -1,3 +1,8 @@
+<?php  
+include("protecao.php");
+protecao();
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -24,7 +29,7 @@
 			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
 		<nav>
 			<ul>
-				<li><a href="game.html">Na'tividade</a></li>
+				<li><a href="game.php">Na'tividade</a></li>
 				<li><a href="ranking.php" class="active">Rankings</a></li>
 				<li><a href="elements.html">Premios</a></li>
 			</ul>
@@ -55,9 +60,9 @@
 		<section id="main" class="wrapper game-menu row gtr-uniform">
 
 			<?php
+			$indice=1;
 
-			$sql="SELECT * FROM tbl_usuario ORDER BY pontuacao DESC";
-			$rank='SELECT * FROM tbl_ranking ORDER BY nome_posicao ASC';
+			$sql="SELECT u.nome_usuario, sum(ifnull(d.pontos, 0)) pontos FROM tbl_usuario u LEFT JOIN(tbl_desafio d CROSS JOIN usuar_desafio ud) ON u.id_usuario=ud.id_usuario and d.id_desafio=ud.id_desafio GROUP BY nome_usuario ORDER BY sum(ifnull(d.pontos, 0)) DESC";
 
 			//conexão como o bd
 			include('conexao.php');
@@ -70,11 +75,11 @@
 
 			<section id="game" class="card-rank">
 				<div class="rank-align">
-					<h3>#1</h3>
+					<h3>#<?php echo($indice++) ?></h3>
 
 					<p class="psn-bold"> <?php echo($registro['nome_usuario']);?> </p>
 
-					<p class="psn-black"> <?php echo($registro['pontuacao']);?> </p>
+					<p class="psn-black"> <?php echo($registro['pontos']);?> </p>
 				</div>
 
 			</section>

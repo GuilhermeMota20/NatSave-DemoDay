@@ -6,7 +6,7 @@ if (!empty($_POST['usuario']) && !empty($_POST['senha'])) {
 }
 else {
     echo ("<script> alert('Usuário ou senha incorretos!');
-        window.location.href='index.html'; </script>");
+        window.location.href='login.html'; </script>");
 }
 
 $sql="SELECT * FROM tbl_usuario WHERE nome_usuario='$usuario' AND senha_usuario='$senha'";
@@ -19,8 +19,12 @@ $linha=mysqli_fetch_array($resultado);
 if (!$linha) {
     echo ("<script> alert('Usuário não cadastrado!'); window.location.href='login.html'; </script>");
 }
-else {
-    echo ("<script> alert('Registro atualizado com sucesso!'); window.location.href='game.html'; </script>");
+else { 
+    session_start();
+    $_SESSION["usuario"]=$usuario;
+    $_SESSION["id_usuario"]=$linha["0"]["id_usuario"];
+    echo ("<script> alert('Registro atualizado com sucesso!'); </script>");
+    header("Location: game.php");
 }
 
 mysqli_close($conn);
