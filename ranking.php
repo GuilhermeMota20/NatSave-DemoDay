@@ -1,14 +1,11 @@
 <?php  
 include("protecao.php");
 protecao();
+$usuario=$_SESSION["usuario"];
+
 ?>
 
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
@@ -26,11 +23,19 @@ protecao();
 	<!-- Header -->
 	<header style="height: 100px;" id="header">
 		<a href="index.html" class="title">
-			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
+			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome">
+		</a>
+		<nav>
+			<ul>
+				<li> <?php echo $usuario?> </li>
+				<li><a href="logout.php">Sair</a></li>
+			</ul>
+		</nav>
+
 		<nav>
 			<ul>
 				<li><a href="game.php">Na'tividade</a></li>
-				<li><a href="ranking.php" class="active">Rankings</a></li>
+				<li><a href="ranking.php" class="active">Ranking</a></li>
 				<li><a href="elements.html">Premios</a></li>
 			</ul>
 		</nav>
@@ -53,7 +58,7 @@ protecao();
 		<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="inner">
-				<h1 id="natividade" class="major">Rankings</h1>
+				<h1 id="natividade" class="major">Ranking:</h1>
 			</div>
 		</section>
 

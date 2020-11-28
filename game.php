@@ -37,17 +37,22 @@
 	<!-- Header -->
 	<header style="height: 100px;" id="header">
 		<a href="index.html" class="title">
-			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
+		<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
+		<nav>
+			<ul>
+				<li> <?php echo $usuario?> </li>
+				<li><a href="logout.php">Sair</a></li>
+			</ul>
+		</nav>
+
 		<nav>
 			<ul>
 				<li><a href="game.php" class="active">Na'tividade</a></li>
-				<li><a href="ranking.php">Rankings</a></li>
+				<li><a href="ranking.php">Ranking</a></li>
 				<li><a href="elements.html">Premios</a></li>
-				<li><a href="logout.php">Sair</a></li>
-				<li> <?php echo $usuario?> </li>
 			</ul>
 		</nav>
-	</header><br><br>
+	</header><br><br><br><br>
 
 	<div vw class="enabled">
 		<div vw-access-button class="active"></div>
@@ -60,8 +65,6 @@
 		new window.VLibras.Widget('https://vlibras.gov.br/app');
 	</script>
 
-	<!-- Wrapper -->
-	<div id="wrapper" class="inner">
 
 		<!-- Main -->
 		<section id="main" class="wrapper">
@@ -72,54 +75,55 @@
 
 		<section id="main" class="wrapper game-menu row gtr-uniform">
 
-		<?php
+			<?php
 
-		$sql="SELECT * FROM tbl_desafio ORDER BY id_desafio ASC";
-		//conexão como o bd
-		include('conexao.php');
+			$sql="SELECT * FROM tbl_desafio ORDER BY id_desafio ASC";
+			//conexão como o bd
+			include('conexao.php');
 
-		//executar comando $sql
-		$resultado=mysqli_query($conn, $sql);
-		while ($registro=mysqli_fetch_array($resultado))
-			{
-		?>
-
-		<form method="POST" action="login_usuario.php">
+			//executar comando $sql
+			$resultado=mysqli_query($conn, $sql);
+			while ($registro=mysqli_fetch_array($resultado))
+				{
+			?>
 
 			<section id="game" class="card-game">
-				<div class="game-align">
-					<img class="game-image" src="<?php echo($registro["figura"]);?>" alt="">
-					<h3>Missão <?php echo($registro["id_desafio"]);?></h3>
-				</div>
+				<form method="POST" action="login_usuario.php">
 
-				<p class="psn"><?php echo($registro["enun_desafio"]); ?></p>
-				<p class="psn">Pontos: <?php echo($registro["pontos"]); ?> NatCoins</p>
-				<ul class="actions">
-					<li>
-						<?php 
-							$id_desafio=$registro['id_desafio'];
+						<div class="game-align">
+							<img class="game-image" src="<?php echo($registro["figura"]);?>" alt="">
+							<h3>Missão <?php echo($registro["id_desafio"]);?></h3>
+						</div>
 
-							$sql="SELECT id_desafio FROM usuar_desafio WHERE id_usuario=$id_usuario and id_desafio=$id_desafio"; 
+						<p class="psn"><?php echo($registro["enun_desafio"]); ?></p>
+						<p class="psn">Pontos: <?php echo($registro["pontos"]); ?> NatCoins</p>
+						<ul class="actions">
+							<li>
+								<?php 
+									$id_desafio=$registro['id_desafio'];
 
-							$verificar_missao=mysqli_query($conn, $sql);
-							$missao_ok=mysqli_fetch_object($verificar_missao);
-						
-							if ($missao_ok== NULL){
+									$sql="SELECT id_desafio FROM usuar_desafio WHERE id_usuario=$id_usuario and id_desafio=$id_desafio"; 
+
+									$verificar_missao=mysqli_query($conn, $sql);
+									$missao_ok=mysqli_fetch_object($verificar_missao);
+								
+									if ($missao_ok== NULL){
+										?>
+										<a id="btngame" href="?Missao=<?php echo($registro["id_desafio"]);?>" class="button scrolly game-btn">Concluir</a>
+										<?php
+									}
+									else {
+										?>
+										<a id="btngame" class="button scrolly game-btn" disabled="disabled" style="color= #fff;">Finalizada!</a>
+										<?php
+									}
+
 								?>
-								<a id="btngame" href="?Missao=<?php echo($registro["id_desafio"]);?>" class="button scrolly game-btn">Concluir</a>
-								<?php
-							}
-							else {
-								?>
-								<a id="btngame" class="button scrolly game-btn" disabled="disabled" style="color= #fff;">Finalizada!</a>
-								<?php
-							}
-
-						?>
-					</li>
-				</ul>
+							</li>
+						</ul>
+				</form>
 			</section>
-		</form>
+
 
 			<?php
                     }
@@ -127,7 +131,7 @@
                 ?>
 
 
-<!-- 			<section id="game" class="card-game">
+			<!--<section id="game" class="card-game">
 				<div class="game-align">
 					<img class="game-image" src="images/troca.svg" alt="">
 					<h3>Missão 2</h3>
@@ -233,7 +237,6 @@
  -->
 		</section>
 
-	</div>
 
 
 	<!-- Footer -->

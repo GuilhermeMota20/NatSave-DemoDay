@@ -3869,7 +3869,6 @@ input, select, textarea {
 
 /* card game - missões */
 
-
 .game-menu {
 	padding-top: 40px;
 	display: flex;
@@ -3879,12 +3878,12 @@ input, select, textarea {
 
 .card-game {
 	width: 300px;
-	height: 380px;
+	height: 390px;
 	background-color: #32be8f !important;
 	border-radius: 1.25em;
-	margin: 20px;
+	margin: 15px;
 	align-items: center;
-	padding: 2%;
+	padding: 3%;
 	box-sizing: content-box;
 }
 
