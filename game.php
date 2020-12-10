@@ -39,7 +39,7 @@
 		<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
 		<nav>
 			<ul>
-				<li> <?php echo $usuario?> </li>
+				<li> <i class="fas fa-user-circle"></i> <?php echo $usuario?> </li>
 				<li><a href="logout.php">Sair</a></li>
 			</ul>
 		</nav>
@@ -48,7 +48,7 @@
 			<ul>
 				<li><a href="game.php" class="active">Na'tividade</a></li>
 				<li><a href="ranking.php">Ranking</a></li>
-				<li><a href="elements.html">Premios</a></li>
+				<li><a href="premio.php">Prêmios</a></li>
 			</ul>
 		</nav>
 	</header><br><br><br><br>

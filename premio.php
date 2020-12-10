@@ -5,6 +5,7 @@ $usuario=$_SESSION["usuario"];
 
 ?>
 
+
 <!DOCTYPE HTML>
 <html>
 
@@ -23,8 +24,7 @@ $usuario=$_SESSION["usuario"];
 	<!-- Header -->
 	<header style="height: 100px;" id="header">
 		<a href="index.html" class="title">
-			<img style="width: 60px;" src="images/logo.png" alt="Logo com nome">
-		</a>
+		<img style="width: 60px;" src="images/logo.png" alt="Logo com nome"></a>
 		<nav>
 			<ul>
 				<li> <i class="fas fa-user-circle"></i> <?php echo $usuario?> </li>
@@ -35,8 +35,8 @@ $usuario=$_SESSION["usuario"];
 		<nav>
 			<ul>
 				<li><a href="game.php">Na'tividade</a></li>
-				<li><a href="ranking.php" class="active">Ranking</a></li>
-				<li><a href="premio.php">Prêmios</a></li>
+				<li><a href="ranking.php">Ranking</a></li>
+				<li><a href="premio.html" class="active">Prêmios</a></li>
 			</ul>
 		</nav>
 	</header><br><br><br><br>
@@ -52,22 +52,19 @@ $usuario=$_SESSION["usuario"];
 		new window.VLibras.Widget('https://vlibras.gov.br/app');
 	</script>
 
-	<!-- Wrapper -->
-	<div id="wrapper" class="inner">
 
 		<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="inner">
-				<h1 id="natividade" class="major">Ranking</h1>
+				<h1 id="natividade" class="major">Prêmios</h1>
 			</div>
 		</section>
 
 		<section id="main" class="wrapper game-menu row gtr-uniform">
 
 			<?php
-			$indice=1;
 
-			$sql="SELECT u.nome_usuario, sum(ifnull(d.pontos, 0)) pontos FROM tbl_usuario u LEFT JOIN(tbl_desafio d CROSS JOIN usuar_desafio ud) ON u.id_usuario=ud.id_usuario and d.id_desafio=ud.id_desafio GROUP BY nome_usuario ORDER BY sum(ifnull(d.pontos, 0)) DESC";
+			$sql="SELECT * FROM tbl_premio";
 
 			include('conexao.php');
 
@@ -76,25 +73,28 @@ $usuario=$_SESSION["usuario"];
 				{
 			?>
 
-			<section id="game" class="card-rank">
-				<div class="rank-align">
-					<h3>#<?php echo($indice++) ?></h3>
+			<section style="height: 480px;" id="game" class="card-game">
+				<form method="POST" action="login_usuario.php">  
 
-					<p class="psn-bold"> <?php echo($registro['nome_usuario']);?> </p>
+					<img src="<?php echo($registro["figura_premio"]);?>" alt="">
 
-					<p class="psn-black"> <?php echo($registro['pontos']);?> </p>
-				</div>
+					<p class="psn"><?php echo($registro["enun_premio"]);?></p>
 
+					<p class="psn">Valor: <?php echo($registro["valor"]);?> NatCoins</p>
+
+					<ul class="actions">
+						<li>
+							<a id="btngame" href="#" class="button scrolly game-btn">Resgatar</a>	
+						</li>
+					</ul>
+				</form>
 			</section>
 
 			<?php
-                    }
-                    mysqli_close($conn);
-                ?>
-
+				}
+				mysqli_close($conn);
+			?>
 		</section>
-
-	</div>
 
 
 	<!-- Footer -->
